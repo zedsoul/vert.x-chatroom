@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.11'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation( 'io.vertx:vertx-core:4.4.0')
+    implementation('io.vertx:vertx-auth-jwt:4.4.0')
+    compile 'io.vertx:vertx-web:4.4.0'
+    implementation('io.vertx:vertx-mysql-client:4.4.0')
+    implementation ('org.apache.shiro:shiro-core:1.7.1')
+    implementation ('ch.qos.logback:logback-classic:1.2.5')
+    compile 'io.vertx:vertx-redis-client:4.4.0'
+}
+
+test {
+    useJUnitPlatform()
+}
